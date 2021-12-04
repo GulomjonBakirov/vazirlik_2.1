@@ -1,0 +1,49 @@
+extends adminLay
+block content
+    body.hold-transition.sidebar-mini.layout-fixed
+        .wrapper
+            include adminheader
+            .content-wrapper
+                section.content
+                    .container-fluid
+                        br
+                        .row
+                            .col-md-12
+                                //enctype="multipart/form-data"
+                                form.card.card-info(action='/admin/AddLessons' method='post')
+                                  .card-header
+                                    h3.card-title Add Video Course
+                                  .card-body
+                                    .form-group
+                                      label Select Category
+                                      select.form-control(name="category" aria-label='Default select example')
+                                        option(selected='' value='WORD') WORD
+                                        option(value='EXCEL') EXCEL
+                                        option(value='POWERPOINT') POWERPOINT
+                                    .input-group.mb-3
+                                      .input-group-prepend
+                                        span.input-group-text 
+                                            i.fas.fa-chalkboard-teacher
+                                      input.form-control(name="Mavzu" type='text' placeholder='Mavzu')
+                                    .input-group.mb-3
+                                      .input-group-prepend
+                                        span.input-group-text 
+                                            i.fas.fa-chart-line
+                                      input.form-control(name="Maqsad" type='text' placeholder='Maqsad')
+                                    p.text-danger(style="font-weight: 700;")
+                                      i.fas.fa-exclamation(style="padding-right: 7px;")
+                                      |Youtubedagi linkni id sini kriting ko'k yozuvdagidek: https://youtu.be/
+                                      span.text-primary Vn_bR1AlV-s
+                                    .input-group.mb-3
+                                      .input-group-prepend
+                                        span.input-group-text 
+                                            i.fab.fa-youtube
+                                      input.form-control(name="video" type='text' placeholder="Youtubedagi linkni id sini kriting")
+                                    br
+                                    br
+                                    .social-auth-links.text-center.mt-2.mb-3
+                                          button.btn.btn-block.btn-primary
+                                            i.fas.fa-upload.mr-2
+                                            |  Start upload
+
+            include adminfooter
